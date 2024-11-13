@@ -21,4 +21,9 @@ public class Square extends Shape {
         gr.setFill(color);
         gr.fillRect(x, y, side, side);
     }
+
+    @Override
+    public Shape clone() {
+        return new Square(color, side);
+    }
 }

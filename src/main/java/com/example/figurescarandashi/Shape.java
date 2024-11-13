@@ -18,6 +18,13 @@ public abstract class Shape {
     // Абстрактный метод для рисования
     abstract void draw(GraphicsContext gr);
 
+    // Метод для рисования в заданных координатах
+    public void draw(GraphicsContext gr, double x, double y) {
+        this.x = x;
+        this.y = y;
+        draw(gr);
+    }
+
     // Метод для задания позиции
     public void setPosition(double x, double y) {
         this.x = x;
@@ -37,4 +44,7 @@ public abstract class Shape {
     public Color getColor() {
         return color;
     }
+
+    // Метод для клонирования фигуры
+    public abstract Shape clone();
 }

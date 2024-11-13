@@ -23,4 +23,9 @@ public class Angle extends Shape {
         gr.strokeLine(x, y, x + side, y);           // Линия от точки (x, y) вправо
         gr.strokeLine(x, y, x, y - side);           // Линия вверх от точки (x, y)
     }
+
+    @Override
+    public Shape clone() {
+        return new Angle(color, side);
+    }
 }

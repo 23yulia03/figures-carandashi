@@ -29,4 +29,9 @@ public class Pentagon extends Shape {
         gr.setFill(color);
         gr.fillPolygon(xPoints, yPoints, 5);
     }
+
+    @Override
+    public Shape clone() {
+        return new Pentagon(color, side);
+    }
 }

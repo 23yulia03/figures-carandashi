@@ -27,4 +27,9 @@ public class Triangle extends Shape {
                 3
         );
     }
+
+    @Override
+    public Shape clone() {
+        return new Triangle(color, base, height);
+    }
 }

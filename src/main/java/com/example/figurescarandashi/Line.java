@@ -4,14 +4,11 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class Line extends Shape {
-    private double x2, y2;
+    private double length;
 
-    public Line(Color color, double x) {
+    public Line(Color color, double length) {
         super(color);
-        this.x = x;
-        this.y = y;
-        this.x2 = x2;
-        this.y2 = y2;
+        this.length = length;
     }
 
     @Override
@@ -22,6 +19,11 @@ public class Line extends Shape {
     @Override
     public void draw(GraphicsContext gr) {
         gr.setStroke(color);
-        gr.strokeLine(x, y, x2, y2);
+        gr.strokeLine(x, y, x + length, y);
+    }
+
+    @Override
+    public Shape clone() {
+        return new Line(color, length);
     }
 }

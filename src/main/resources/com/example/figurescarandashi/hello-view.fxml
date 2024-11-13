@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.canvas.Canvas?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ColorPicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.figurescarandashi.HelloController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.example.figurescarandashi.HelloController">
     <!-- Инструкция с доступными фигурами -->
-    <Label text="Доступные фигуры: Линия, Квадрат, Треугольник, Круг, Угол, Пятиугольник" layoutX="20" layoutY="10"/>
+    <Label layoutX="20" layoutY="10" text="Доступные фигуры: Линия, Квадрат, Треугольник, Круг, Угол, Пятиугольник" />
 
     <!-- Текстовое поле для ввода названия фигуры -->
-    <TextField fx:id="shapeInput" promptText="Введите название фигуры на русском" layoutX="20" layoutY="40" prefWidth="180"/>
+    <TextField fx:id="shapeInput" layoutX="20" layoutY="40" prefHeight="26.0" prefWidth="158.0" promptText="Введите название фигуры" />
 
     <!-- Выбор цвета -->
-    <ColorPicker fx:id="colorPicker" layoutX="220" layoutY="40"/>
+    <ColorPicker fx:id="colorPicker" layoutX="221.0" layoutY="40.0" />
 
-    <!-- Кнопки для рисования и очистки -->
-    <Button text="Нарисовать" onAction="#onDraw" layoutX="20" layoutY="80"/>
-    <Button text="Очистить" onAction="#onClear" layoutX="100" layoutY="80"/>
+    <!-- Текстовое поле для ввода размера фигуры -->
+    <TextField fx:id="sizeInput" layoutX="20.0" layoutY="73.0" prefHeight="26.0" prefWidth="158.0" promptText="Введите размер фигуры" />
+
+    <!-- Кнопка для очистки -->
+    <Button layoutX="20.0" layoutY="109.0" onAction="#onClear" text="Очистить" />
 
     <!-- Холст для рисования фигур -->
-    <Canvas fx:id="canvas" width="600" height="400" layoutX="20" layoutY="120"
-            onMouseClicked="#onMouseClick" onMousePressed="#onMousePress" onMouseDragged="#onMouseDrag" onMouseReleased="#onMouseRelease"/>
+    <Canvas fx:id="canvas" height="400" layoutX="20.0" layoutY="146.0" onMouseMoved="#onMouseMove" width="600" />
 </AnchorPane>

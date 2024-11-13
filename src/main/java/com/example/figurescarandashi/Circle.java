@@ -21,4 +21,9 @@ public class Circle extends Shape {
         gr.setFill(color);
         gr.fillOval(x - radius, y - radius, radius * 2, radius * 2);
     }
+
+    @Override
+    public Shape clone() {
+        return new Circle(color, radius);
+    }
 }
