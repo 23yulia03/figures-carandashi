@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.figurescarandashi.HelloController">
+    <!-- Инструкция с доступными фигурами -->
+    <Label text="Доступные фигуры: Линия, Квадрат, Треугольник, Круг, Угол, Пятиугольник" layoutX="20" layoutY="10"/>
+
+    <!-- Текстовое поле для ввода названия фигуры -->
+    <TextField fx:id="shapeInput" promptText="Введите название фигуры на русском" layoutX="20" layoutY="40" prefWidth="180"/>
+
+    <!-- Выбор цвета -->
+    <ColorPicker fx:id="colorPicker" layoutX="220" layoutY="40"/>
+
+    <!-- Кнопки для рисования и очистки -->
+    <Button text="Нарисовать" onAction="#onDraw" layoutX="20" layoutY="80"/>
+    <Button text="Очистить" onAction="#onClear" layoutX="100" layoutY="80"/>
+
+    <!-- Холст для рисования фигур -->
+    <Canvas fx:id="canvas" width="600" height="400" layoutX="20" layoutY="120"
+            onMouseClicked="#onMouseClick" onMousePressed="#onMousePress" onMouseDragged="#onMouseDrag" onMouseReleased="#onMouseRelease"/>
+</AnchorPane>
